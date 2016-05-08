@@ -61,3 +61,25 @@
 #updown {
   margin-top: -15px;
 }
+
+#big {
+  position:absolute;
+  width: 20px;
+  height: 20px;
+  background-color: plum;
+  border-radius: 50px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  margin-top: 50px;
+  margin-left: 450px;
+}
+
+#small {
+  position:absolute;
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  border-radius: 50px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  margin-top: 300px;
+  margin-left: 100px;
+}

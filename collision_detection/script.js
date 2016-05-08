@@ -1,5 +1,5 @@
-var puck_x = 200;
-var puck_y = 200;
+var puck_x = 50;
+var puck_y = 50;
 var speed = 25;
 
 document.getElementById ('puck').style.top = puck_y + 'px';
@@ -10,7 +10,7 @@ function logCoordinates() {
 }
 
 function checkCollision() {
-    if (puck_x > 250 && puck_x < 350 && puck_y > 150 && puck_y < 250) {
+    if (puck_x >= 250 && puck_x <= 350 && puck_y >= 150 && puck_y <= 250) {
         console.log('collision detected');
         document.getElementById('gap').style.backgroundColor = 'red';
     } else {
@@ -30,12 +30,25 @@ function checkBoundaries() {
     }
 }
 
+function checkSize() {
+    if (puck_x == 450 && puck_y == 50) {
+        console.log('big');
+        document.getElementById('puck').style.width = 40 +'px';
+        document.getElementById('puck').style.height = 40 +'px';
+    } else if (puck_x == 100 && puck_y == 300) {
+        console.log('small');
+        document.getElementById('puck').style.width = 10 +'px';
+        document.getElementById('puck').style.height = 10 +'px';
+    }
+}
+
 document.getElementById ('right').addEventListener('click', function () {
     puck_x += speed;
     document.getElementById ('puck').style.left = puck_x + 'px';
     logCoordinates();
     checkCollision();
     checkBoundaries();
+    checkSize();
 });
 
 
@@ -45,6 +58,7 @@ document.getElementById ('left').addEventListener('click', function () {
     logCoordinates();
     checkCollision();
     checkBoundaries();
+    checkSize();
 });
 
 document.getElementById ('up').addEventListener('click', function () {
@@ -53,6 +67,7 @@ document.getElementById ('up').addEventListener('click', function () {
     logCoordinates();
     checkCollision();
     checkBoundaries();
+    checkSize();
 });
 
 document.getElementById ('down').addEventListener('click', function () {
@@ -61,6 +76,7 @@ document.getElementById ('down').addEventListener('click', function () {
     logCoordinates();
     checkCollision();
     checkBoundaries();
+    checkSize();
 });
 
 /*
